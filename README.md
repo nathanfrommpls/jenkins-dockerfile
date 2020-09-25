@@ -1,7 +1,20 @@
 # jenkins-dockerfile
+
 A dockerfile for jenkins. Self signed cert and adding gcc for building c code. Not hardened or ready for production use in anyway.
 
-# Launch a Jenkins instance
+Installed tools for building.
+
+- gcc
+- aws cli
+- terraform
+- javac
+
+## Credentials for aws cli / terraform
+
+Replace the config and credential files in this directory before doing your docker build. 
+
+## Launch the Jenkins instance
+
 ```
 docker build -t nathanfrommpls/jenkins .
 docker run --detach -p 8443:8443 -p 50000:50000 nathanfrommpls/jenkins:latest
